@@ -15,7 +15,7 @@ use App\Member;
 Route::get('/', function () {
     //return view('welcome');
 
-    dd(Member::all());
+    return Member::all();
 });
 
 
