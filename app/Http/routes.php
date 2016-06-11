@@ -10,7 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Member;
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+
+    return Member::all();
 });
+
+
