@@ -6,7 +6,7 @@
 
 @section('content')
   <div class="weui_cells_title"></div>
-  
+
   <div class="weui_cells weui_cells_form">
     <div class="weui_cell">
       <div class="weui_cell_hd"><label class="weui_label">账号</label></div>
@@ -36,7 +36,11 @@
 
   </div>
 
-  
+  <div class="weui_cells_tips"></div>
+  <div class="weui_btn_area">
+  	<a href="javascript:" class="weui_btn weui_btn_primary" onclick="onLoginClick();"></a>
+  </div>
+  <a href="/register" class="bk_bottom_tips bk_important">没有账号？去注册</a>
 
 
 @endsection
