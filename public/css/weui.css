@@ -657,7 +657,10 @@ input.weui_btn_plain_default {
   padding-bottom: 0;
 }
 .weui_vcode .weui_cell_ft img {
-  margin-left: 5px;
+
+  padding: 0;
+  margin: 0;
+  border: none;
   height: 44px;
   vertical-align: middle;
 }
