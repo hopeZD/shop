@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Service;
 
 use App\Http\Controllers\Controller;
-use App\Tool\ValidateCode\ValidateCode;
+use App\Tool\Validate\ValidateCode;
 
 
 class ValidateCodeController extends BaseController
 {
     public function create($value = '') {
     	$validateCode = new ValidateCode();
-    	return $validatecode->doimg();
+    	return $validateCode->doimg();
     }
 }
