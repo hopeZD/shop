@@ -6,3 +6,7 @@
 @section('content')
     <p>这里是登录!</p>
 @endsection
+
+@section('my-js')
+    alert('登录')
+@endsection
