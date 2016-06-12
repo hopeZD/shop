@@ -30,7 +30,7 @@
 	  		<input type="tel" class="weui_input" placeholder="请输入验证码">
 	  	</div>
 	  	<div class="meui_cell_ft">
-	  		<img src="/service/validate_code/create/login" class="bk_validate_code" />
+	  		<img src="/service/validate_code/create" class="bk_validate_code" />
 	  	</div>
 	  </div>
 
