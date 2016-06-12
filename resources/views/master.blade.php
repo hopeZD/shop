@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="/css/meui.css"/>
+    <link rel="stylesheet" href="/css/weui.css"/>
     <link rel="stylesheet" href="/css/light.css"/>
 
 </head>
@@ -12,7 +12,6 @@
     @yield('content')
 
     <div class="bk_toptips"><span></span></div>
-
     <div id="global_menu" onclick="onMenuClick();">
         <div></div>
     </div>
