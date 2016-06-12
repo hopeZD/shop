@@ -8,5 +8,8 @@
 @endsection
 
 @section('my-js')
-    alert('登录')
+    <script type="text/javascript">
+        alert('登录')
+    </script>
+
 @endsection
