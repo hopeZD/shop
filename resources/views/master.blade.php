@@ -51,10 +51,16 @@
     }
 
     function onMenuClick() {
+
       var mask = $('#mask');
       var weuiActionsheet = $('#weui_actionsheet');
+
       weuiActionsheet.addClass('weui_actionsheet_toggle');
       mask.show().addClass('weui_fade_toggle').click(function () {
+        hideActionSheet(weuiActionsheet, mask);
+      });
+
+      $('#actionsheet_cancel').click(function () {
         hideActionSheet(weuiActionsheet, mask);
       });
 
