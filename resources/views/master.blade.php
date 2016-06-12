@@ -50,18 +50,7 @@
     }
 
     function onMenuClick() {
-      var mask = $('#mask');
-      var weuiActionsheet = $('#weui_actionsheet');
-
-      weuiActionsheet.add('weui_fade_toggle').click(function () {
-        hideActionSheet(weuiActionsheet, mask);
-      });
-
-      $('#actionsheet_cancel').click(function () {
-        hideActionSheet(weuiActionsheet, mask);
-      });
-
-      weuiActionsheet.unbind('transitionend').unbind('webkitTransitionEnd');
+      alert('test');
     }
 
     function onMenuItemClick(index) {
