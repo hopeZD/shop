@@ -1,6 +1,5 @@
 @extends('master')
 
-
 @section('title', '登录')
 
 @section('content')

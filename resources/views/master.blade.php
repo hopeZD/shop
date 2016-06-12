@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="/css/weui.css" />
+    <link rel="stylesheet" href="/css/meui.css"/>
     <link rel="stylesheet" href="/css/light.css"/>
 
 </head>
@@ -38,47 +38,52 @@
 <script src="js/jquery.min.js"></script>
 
 <script type="text/javascript">
+
     function hideActionSheet(weuiActionsheet, mask) {
-        weuiActionsheet.removeClass('weui_actionsheet_toggle');
-        mask.removeClass('weui_fade_toggle');
-        weuiActionsheet.on('transitionend', function() {
-            mask.hide();
-        }).on('webkitTransitionEnd', function() {
-            mask.hide();
-        })
+      weuiActionsheet.removeClass('weui_actionsheet_toggle');
+      mask.removeClass('weui_fade_toggle');
+      weuiActionsheet.on('transitionend', function() {
+        mask.hide();
+      }).on('webkitTransitionEnd', function() {
+        mask.hide();
+      })
+
     }
 
     function onMenuClick() {
-        var mask = $('#mask');
-        var weuiActionsheet = $('#weui_actionsheet');
-        weuiActionsheet.addClass('weui_fade_toggle').click(function () {
-            hideActionSheet(weuiActionsheet, mask);
-        });
+      var mask = $('#mask');
+      var weuiActionsheet = $('#weui_actionsheet');
 
-        $('#actionsheet_cancel').click(function () {
-            hideActionSheet(weuiActionsheet, mask);
-        });
+      weuiActionsheet.add('weui_fade_toggle').click(function () {
+        hideActionSheet(weuiActionsheet, mask);
+      });
 
-        weuiActionsheet.unbind('transitionend').unbind('webkitTransitionEnd');
+      $('#actionsheet_cancel').click(function () {
+        hideActionSheet(weuiActionsheet, mask);
+      });
 
+      weuiActionsheet.unbind('transitionend').unbind('webkitTransitionEnd');
     }
 
     function onMenuItemClick(index) {
-        var mask = $('mask');
-        var weuiActionsheet = $('#weui_actionsheet');
-        hideActionSheet(weuiActionsheet, mask);
-        if(index == 1) {
+      var mask = $('mask');
+      var weuiActionsheet = $('weui_actionsheet');
 
-        } else if (index == 2) {
+      hideActionSheet(weuiActionsheet, mask);
 
-        } else if (index == 3) {
+      if(index == 1) {
 
-        } else {
-            $('.bk_toptips').show();
-            $('.bk_toptips span').html("敬请期待!");
-            setTimeout(function() { $('.bk_toptips').hide();}, 2000);
-        }
+      } else if (index == 2) {
+
+      } else if (index == 3) {
+
+      }else {
+        $('.bk_toptips').show();
+        $('.bk_toptips span').html("敬请期待!");
+        setTimeout(function() { $('.bk_toptips').hide(); }, 2000);
+      }
     }
+
 </script>
 
 
