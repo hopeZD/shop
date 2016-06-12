@@ -39,6 +39,7 @@
 <script type="text/javascript">
 
     function hideActionSheet(weuiActionsheet, mask) {
+
       weuiActionsheet.removeClass('weui_actionsheet_toggle');
       mask.removeClass('weui_fade_toggle');
       weuiActionsheet.on('transitionend', function() {
@@ -51,8 +52,9 @@
 
     function onMenuClick() {
       var mask = $('#mask');
-      var weuiActionsheet = $('#weui_actionsheet_toggle');
-      weuiActionsheet.addClass('weui_fade_toggle').click(function () {
+      var weuiActionsheet = $('#weui_actionsheet');
+      weuiActionsheet.addClass('weui_actionsheet_toggle');
+      mask.show().addClass('weui_fade_toggle').click(function () {
         hideActionSheet(weuiActionsheet, mask);
       });
 
