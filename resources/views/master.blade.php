@@ -38,7 +38,7 @@
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
     function hideActionSheet(weuiActionsheet, mask) {
-        meuiActionsheet.removeClass('weui_actionsheet_toggle');
+        weuiActionsheet.removeClass('weui_actionsheet_toggle');
         mask.removeClass('weui_fade_toggle');
         weuiActionsheet.on('transitionend', function() {
             mask.hide();
