@@ -50,7 +50,13 @@
     }
 
     function onMenuClick() {
-      alert('test');
+      var mask = $('#mask');
+      var weuiActionsheet = $('#weui_actionsheet_toggle');
+      weuiActionsheet.addClass('weui_fade_toggle').click(function () {
+        hideActionSheet(weuiActionsheet, mask);
+      });
+
+      weuiActionsheet.unbind('transitionend').unbind('webkitTransitionEnd');
     }
 
     function onMenuItemClick(index) {
