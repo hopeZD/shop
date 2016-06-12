@@ -17,8 +17,6 @@ body {
 }
 a img {
   border: 0;
-  padding: 0;
-  margin: 0;
 }
 a {
   text-decoration: none;
@@ -340,9 +338,6 @@ input.weui_btn_plain_default {
 .weui_cell {
   position: relative;
 }
-
-.weui_cell
-
 .weui_cell:before {
   content: " ";
   position: absolute;
