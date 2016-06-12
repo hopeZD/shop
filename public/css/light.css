@@ -158,3 +158,8 @@ body,html {
     width: 100%;
     text-align: center;
 }
+
+img .bk_validate_code {
+    margin: 0;
+    padding: 0;
+}
