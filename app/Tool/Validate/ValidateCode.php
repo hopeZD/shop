@@ -1,4 +1,4 @@
-<? php
+<?php
 
 namespace App\Tool\Validate;
 
@@ -70,25 +70,3 @@ class ValidateCode {
         return strtolower($this->code);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
