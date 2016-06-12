@@ -55,8 +55,8 @@
       <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
+            <state relative-caret-position="-432">
+              <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -133,7 +133,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="97" />
+    <option name="x" value="142" />
     <option name="y" value="23" />
     <option name="width" value="1183" />
     <option name="height" value="704" />
@@ -534,15 +534,15 @@
       <updated>1465632535083</updated>
       <workItem from="1465632540508" duration="812000" />
       <workItem from="1465633443594" duration="6602000" />
-      <workItem from="1465698577900" duration="6833000" />
+      <workItem from="1465698577900" duration="7099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14247000" />
+    <option name="totallyTimeSpent" value="14513000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="97" y="23" width="1183" height="704" extended-state="0" />
+    <frame x="142" y="23" width="1183" height="704" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -834,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="77" column="67" selection-start-line="77" selection-start-column="67" selection-end-line="77" selection-end-column="67" />
+        <state relative-caret-position="-432">
+          <caret line="4" column="92" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
           <folding />
         </state>
       </provider>
