@@ -38,7 +38,7 @@
 
   <div class="weui_cells_tips"></div>
   <div class="weui_btn_area">
-  	<a href="javascript:" class="weui_btn weui_btn_primary" onclick="onLoginClick();"></a>
+  	<a href="javascript:" class="weui_btn weui_btn_primary" onclick="onLoginClick();">登录</a>
   </div>
   <a href="/register" class="bk_bottom_tips bk_important">没有账号？去注册</a>
 
