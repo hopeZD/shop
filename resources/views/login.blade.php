@@ -5,7 +5,40 @@
 @section('title', '登录')
 
 @section('content')
-    <p>这里是登录!</p>
+  <div class="weui_cells_title"></div>
+  
+  <div class="weui_cells weui_cells_form">
+    <div class="weui_cell">
+      <div class="weui_cell_hd"><label class="weui_label">账号</label></div>
+
+      <div class="weui_cell_bd weui_cell_primary">
+      	<input type="tel" class="weui_input" placeholder="邮箱或手机号" />
+      </div>
+			
+    </div>
+		
+		<div class="weui_cell">
+	  	<div class="weui_cell_hd"><label  class="weui_label">密码</label></div>
+	  	<div class="weui_cell_bd weui_cell_primary">
+	  		<input type="tel" class="weui_input" placeholder="不少于6位">
+	  	</div>
+	  </div>
+
+	  <div class="weui_cell weui_vcode">
+	  	<div class="weui_cell_hd"><label  class="weui_label">验证码</label></div>
+	  	<div class="weui_cell_bd weui_cell_primary">
+	  		<input type="tel" class="weui_input" placeholder="请输入验证码" />
+	  	</div>
+	  	<div class="meui_cell_ft">
+	  		<img src="/service/validate_code/create/login" class="bk_validate_code" />
+	  	</div>
+	  </div>
+
+  </div>
+
+  
+
+
 @endsection
 
 @section('my-js')

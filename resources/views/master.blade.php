@@ -9,7 +9,9 @@
 
 </head>
 <body>
-    @yield('content')
+    <div class="page">
+      @yield('content')
+    </div>
 
     <div class="bk_toptips"><span></span></div>
     <div id="global_menu" onclick="onMenuClick();">
