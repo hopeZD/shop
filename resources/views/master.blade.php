@@ -36,6 +36,7 @@
 
 </body>
 <script src="js/jquery.min.js"></script>
+
 <script type="text/javascript">
     function hideActionSheet(weuiActionsheet, mask) {
         weuiActionsheet.removeClass('weui_actionsheet_toggle');
@@ -50,7 +51,7 @@
     function onMenuClick() {
         var mask = $('#mask');
         var weuiActionsheet = $('#weui_actionsheet');
-        weuiActionsheet.addClass('meui_fade_toggle').click(function () {
+        weuiActionsheet.addClass('weui_fade_toggle').click(function () {
             hideActionSheet(weuiActionsheet, mask);
         });
 
@@ -79,5 +80,8 @@
         }
     }
 </script>
+
+
 @yield('my-js')
+
 </html>
