@@ -30,7 +30,7 @@
     </div>
 
     <div class="weui_cells weui_cells_form">
-        
+
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
             <div class="weui_cell_bd weui_cell_primary">
@@ -44,7 +44,7 @@
                 <input type="text" placeholder="不少于6位数" class="weui_input">
             </div>
         </div>
-        
+
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
             <div class="weui_cell_bd weui_primary">
@@ -119,6 +119,5 @@
 
 
 @section('my_js')
-
 
 @endsection
