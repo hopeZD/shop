@@ -13,7 +13,7 @@
 use App\Entity\Member;
 
 Route::get('/', function () {
-    return view('register');
+    return view('welcome');
 
 });
 
