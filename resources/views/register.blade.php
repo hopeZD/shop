@@ -65,7 +65,7 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">手机验证码</label></div>
             <div class="weui_cell_bd weui_primary">
-                <input type="text" class="weui_input" placeholder="" />
+                <input type="number" class="weui_input" placeholder="" />
             </div>
             <p class="bk_important bk_phone_code_send">发送验证码</p>
             <div class="weui_cell_ft">

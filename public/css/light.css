@@ -159,3 +159,6 @@ body,html {
     text-align: center;
 }
 
+.bk_validate_code {
+    float: right;
+}
