@@ -97,10 +97,10 @@
             </div>
         </div>
 
-        <div class="weui_cell weui_vcode">
-            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
-            <div class="weui_cell_bd weui_primary">
-                <input type="text" class="weui_input" placeholder="请输入验证码" />
+        <div class="weui_cell  weui_vcode">
+            <div class="weui_cell_hd"><label  class="weui_label">验证码</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input type="tel" class="weui_input" placeholder="请输入验证码">
             </div>
             <div class="weui_cell_ft">
                 <img src="/service/validate_code/create" class="bk_validate_code" />
@@ -113,7 +113,7 @@
     <div class="weui_btn_area">
         <a href="javascript:" class="weui_btn weui_btn_primary" onclick="onRegisterClick();">注册</a>
     </div>
-    <a href="/register" class="bk_bottom_tips bk_important">已有账号？去登录</a>
+    <a href="/login" class="bk_bottom_tips bk_important">已有账号？去登录</a>
 
 @endsection
 
