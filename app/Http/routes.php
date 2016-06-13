@@ -13,9 +13,15 @@
 use App\Entity\Member;
 
 Route::get('/', function () {
-    return view('login');
-
+    return view('welcome');
 
 });
 
+Route::get('/Login', function() {
+   return view('Login');
+});
+
+Route::get('/Register');
+
 Route::any('service/validate_code/create', 'Service\ValidateCodeController@create');
+
