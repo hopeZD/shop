@@ -24,7 +24,7 @@
 	  	</div>
 	  </div>
 
-	  <div class="weui_cell">
+	  <div class="weui_cell  weui_vcode">
 	  	<div class="weui_cell_hd"><label  class="weui_label">验证码</label></div>
 	  	<div class="weui_cell_bd weui_cell_primary">
 	  		<input type="tel" class="weui_input" placeholder="请输入验证码">
