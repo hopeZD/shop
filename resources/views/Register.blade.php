@@ -1,7 +1,6 @@
 @extends('master')
 
 @section('title','注册')
-    
 
 @section('content')
     <div class="weui_cells_title">注册方式</div>
