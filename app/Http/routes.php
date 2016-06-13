@@ -25,5 +25,6 @@ Route::get('/register', function() {
     return view('register');
 });
 
+
 Route::any('service/validate_code/create', 'Service\ValidateCodeController@create');
 
