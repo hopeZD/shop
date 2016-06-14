@@ -125,11 +125,7 @@
             $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
         });
 
-        $('#x12').next().hide();
-
-        $('input:radio[name=register_type]').click(function (event) {
-            alert('hello');
-        });
+        //$('#x12').next().hide();
 
 
 
