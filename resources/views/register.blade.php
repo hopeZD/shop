@@ -127,8 +127,8 @@
 
         $('#x12').next().hide();
 
-        $('input:radio[name=register_type]').click(function () {
-           alert('test');
+        $('input:radio[name=register_type]').click(function (event) {
+           $('input:radio[name=regist_type]').attr('checked', false);
         });
 
 
