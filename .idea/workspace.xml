@@ -55,8 +55,8 @@
       <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="490">
+              <caret line="137" column="39" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
               <folding>
                 <element signature="e#2764#2786#0#HTML" expanded="true" />
               </folding>
@@ -442,12 +442,12 @@
       <workItem from="1465698577900" duration="9096000" />
       <workItem from="1465729066687" duration="5231000" />
       <workItem from="1465783272571" duration="9542000" />
-      <workItem from="1465869583281" duration="401000" />
+      <workItem from="1465869583281" duration="790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31684000" />
+    <option name="totallyTimeSpent" value="32073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="23" width="1203" height="704" extended-state="0" />
@@ -853,8 +853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="490">
+          <caret line="137" column="39" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
           <folding>
             <element signature="e#2764#2786#0#HTML" expanded="true" />
           </folding>
