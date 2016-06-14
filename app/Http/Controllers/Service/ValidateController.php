@@ -29,7 +29,7 @@ class ValidateController extends Controller
             $code .= $charset[mt_rand(0, $_len)];
         }
 
-        $sendTemplateSMS->sendTempSMS("18810256225", array(1234, 30), 1);
+        $sendTemplateSMS->sendTemplateSMS("18810256225", array(1234, 30), 1);
         return 'xx';
     }
 }
