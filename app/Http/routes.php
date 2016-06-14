@@ -14,7 +14,6 @@ use App\Entity\Member;
 
 Route::get('/', function () {
     return view('login');
-
 });
 
 Route::get('/login', function() {

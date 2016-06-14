@@ -469,7 +469,7 @@ input.weui_btn_plain_default {
 .weui_cells_radio .weui_cell:active {
   background-color: #ECECEC;
 }
-.weui_cells_radio .weui_check:checked + .weui_icon_checked:before {
+.weui_cells_radio .weui_icon_checked:before {
   display: block;
   content: '\EA08';
   color: #09BB07;
