@@ -4,7 +4,8 @@ namespace App\Tool\SMS;
 
 use App\Tool\SMS\CCPRestSmsSDK;
 
-include_once("./CCPRestSmsSDK.php");
+
+include_once "./CCPRestSmsSDK.php";
 
 class SendTemplateSMS {
 
@@ -46,7 +47,6 @@ class SendTemplateSMS {
        $result = $rest->sendTemplateSMS($to,$datas,$tempId);
        if($result == NULL ) {
            echo "result error!";
-           retrun;
        }
        if($result->statusCode!=0) {
            echo "error code :" . $result->statusCode . "<br>";
