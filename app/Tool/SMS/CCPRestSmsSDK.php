@@ -2,7 +2,8 @@
 
 namespace App\Tool\SMS;
 
-class REST {
+
+class CCPRestSmsSDK {
     private $AccountSid;
     private $AccountToken;
     private $AppId;
@@ -12,7 +13,7 @@ class REST {
     private $Batch;  //时间戳
     private $BodyType = "xml";//包体格式，可填值：json 、xml
     private $enabeLog = true; //日志开关。可填值：true、
-    private $Filename="log.txt"; //日志文件
+    private $Filename="./log.txt"; //日志文件
     private $Handle;
     function __construct($ServerIP,$ServerPort,$SoftVersion)
     {
@@ -22,7 +23,6 @@ class REST {
         $this->SoftVersion = $SoftVersion;
         $this->Handle = fopen($this->Filename, 'a');
     }
-
     /**
      * 设置主帐号
      *
@@ -81,11 +81,9 @@ class REST {
                 $result = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><Response><statusCode>172001</statusCode><statusMsg>网络错误</statusMsg></Response>";
             }
         }
-
         curl_close($ch);
         return $result;
     }
-
 
 
     /**
@@ -138,11 +136,11 @@ class REST {
         }else{ //xml格式
             $datas = simplexml_load_string(trim($result," \t\n\r"));
         }
-          if($datas == FALSE){
-            $datas = new stdClass();
-            $datas->statusCode = '172003';
-            $datas->statusMsg = '返回包体错误';
-        }
+        //  if($datas == FALSE){
+//            $datas = new stdClass();
+//            $datas->statusCode = '172003';
+//            $datas->statusMsg = '返回包体错误';
+//        }
         //重新装填数据
         if($datas->statusCode==0){
             if($this->BodyType=="json"){
@@ -160,37 +158,37 @@ class REST {
     function accAuth()
     {
         if($this->ServerIP==""){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172004';
             $data->statusMsg = 'IP为空';
             return $data;
         }
         if($this->ServerPort<=0){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172005';
             $data->statusMsg = '端口错误（小于等于0）';
             return $data;
         }
         if($this->SoftVersion==""){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172013';
             $data->statusMsg = '版本号为空';
             return $data;
         }
         if($this->AccountSid==""){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172006';
             $data->statusMsg = '主帐号为空';
             return $data;
         }
         if($this->AccountToken==""){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172007';
             $data->statusMsg = '主帐号令牌为空';
             return $data;
         }
         if($this->AppId==""){
-            $data = new stdClass();
+            $data = new \stdClass();
             $data->statusCode = '172012';
             $data->statusMsg = '应用ID为空';
             return $data;
