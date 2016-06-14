@@ -60,16 +60,6 @@
             </div>
         </div>
 
-        <div class="weui_cell weui_vcode">
-            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
-            <div class="weui_cell_bd weui_cell_primary">
-                <input type="text" class="weui_input" placeholder="请输入验证码" />
-            </div>
-            <div class="weui_cell_ft">
-                <img src="/service/validate_code/create" class="bk_validate_code" />
-            </div>
-        </div>
-
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">手机验证码</label></div>
             <div class="weui_cell_bd weui_cell_primary">
@@ -149,6 +139,10 @@
                 $('.weui_cells_form').eq(1).show();
                 $('.weui_cells_form').eq(0).hide();
             }
+        });
+
+        $('.bk_validate_code').click(function(event) {
+
         });
 
     </script>
