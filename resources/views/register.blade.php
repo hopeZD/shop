@@ -12,7 +12,7 @@
                 <p>手机注册</p>
             </div>
             <div class="weui_cell_ft">
-                <input type="radio" class="weui_check" name="register_type" id="x11" checked="手机注册"/>
+                <input type="radio" class="weui_check" name="register_type" id="x11" checked=""/>
                 <span class="weui_icon_checked"></span>
             </div>
         </label>
@@ -131,13 +131,13 @@
             $('input:radio[name=register_type]').attr('checked', false);
             $(this).attr('checked', true);
             if($(this).attr('id') == 'x11') {
-                $('x11').next().show();
-                $('x12').next().hide();
+                $('#x11').next().show();
+                $('#x12').next().hide();
             } else {
-                $('x12').next().show();
-                $('x11').next().hide();
+                $('#x11').next().hide();
+                $('#x12').next().show();
             }
-         });
+        });
 
     </script>
 @endsection
