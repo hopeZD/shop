@@ -125,7 +125,22 @@
             $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
         });
 
-        //$('#x12').next().hide();
+        $('#x12').next().hide();
+
+        $('input:radio[name=register_type]').click(function(event) {
+            $('input:radio[name=register_type]').attr('checked', false);
+            $(this).attr('checked', true);
+
+            if($(this).attr('id') == 'x11') {
+                $('#x11').next().show();
+                $('#x12').next().hide();
+            } else if($(this).attr('id') == 'x12') {
+                $('#x12').next().show();
+                $('#x11').next().hide();
+            }
+
+        });
+
 
 
     </script>
