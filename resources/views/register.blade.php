@@ -12,7 +12,7 @@
                 <p>手机注册</p>
             </div>
             <div class="weui_cell_ft">
-                <input type="radio" class="weui_check" name="register_type" id="x11" />
+                <input type="radio" class="weui_check" name="register_type" id="x11" checked="checked"/>
                 <span class="weui_icon_checked"></span>
             </div>
         </label>
