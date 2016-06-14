@@ -6,6 +6,7 @@
 
 @section('content')
     <div class="weui_cells_title">注册方式</div>
+
     <div class="weui_cells weui_cells_radio">
         <label  class="weui_cell weui_check_label" for="X11" >
             <div class="weui_cell_bd weui_cell_primary">
@@ -130,7 +131,7 @@
 
         $('#x12').next().hide();
         
-        $('input:radio[name=register_type]').click(function(event) {
+        $('input:radio[name=register_type]').click(function() {
             alert('test');
         });
 

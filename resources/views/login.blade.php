@@ -5,7 +5,7 @@
 @section('title', '登录')
 
 @section('content')
-  <div class="weui_cells_title"></div>
+  <div class="weui_cells_title">登录</div>
 
   <div class="weui_cells weui_cells_form">
     <div class="weui_cell">
