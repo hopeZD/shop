@@ -138,11 +138,11 @@ class REST {
         }else{ //xml格式
             $datas = simplexml_load_string(trim($result," \t\n\r"));
         }
-        //  if($datas == FALSE){
-//            $datas = new stdClass();
-//            $datas->statusCode = '172003';
-//            $datas->statusMsg = '返回包体错误';
-//        }
+          if($datas == FALSE){
+            $datas = new stdClass();
+            $datas->statusCode = '172003';
+            $datas->statusMsg = '返回包体错误';
+        }
         //重新装填数据
         if($datas->statusCode==0){
             if($this->BodyType=="json"){
