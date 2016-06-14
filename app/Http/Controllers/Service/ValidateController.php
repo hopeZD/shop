@@ -10,6 +10,7 @@ use App\Tool\SMS\SendTemplateSMS;
 
 
 
+
 class ValidateController extends Controller
 {
     public function create($value='') {
