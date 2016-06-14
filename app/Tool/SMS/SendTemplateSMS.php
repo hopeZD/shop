@@ -1,6 +1,8 @@
 <?php
 
-include_once "./CCPRestSmsSDK.php";
+namespace App\Tool\SMS;
+
+use App\Tool\SMS\CCPRestSmsSDK;
 
 class SendTemplateSMS {
 

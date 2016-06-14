@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Tool\SMS;
+
 class REST {
     private $AccountSid;
     private $AccountToken;
