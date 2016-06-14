@@ -2,6 +2,7 @@
 
 namespace App\Tool\SMS;
 
+include_once "CCPRestSmsSDK.php";
 use App\Tool\SMS\CCPRestSmsSDK;
 
 class SendTemplateSMS {
