@@ -125,8 +125,8 @@
             $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
         });
 
-        $('#x12').next().hide();
-        
+        //$('#x12').next().hide();
+
 
     </script>
 @endsection
