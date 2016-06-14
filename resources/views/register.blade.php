@@ -8,18 +8,22 @@
     <div class="weui_cells_title">注册方式</div>
 
     <div class="weui_cells weui_cells_radio">
-        <label  class="weui_cell weui_check_label" for="X11" >
+
+        <label for="x11" class="weui_cell weui_check_label">
+
             <div class="weui_cell_bd weui_cell_primary">
                 <p>手机注册</p>
             </div>
 
             <div class="weui_cell_ft">
-                <input type="radio" class="weui_check" name="register_type" id="x11" checked="checked"/>
+                <input type="radio" class="weui_check" name="register_type" id="x11" checked="checked" />
                 <span class="weui_icon_checked"></span>
             </div>
+
         </label>
 
-        <label  class="weui_cell weui_check_label" for="X12" >
+        <label for="x12" class="weui_cell weui_check_label">
+
             <div class="weui_cell_bd weui_cell_primary">
                 <p>邮箱注册</p>
             </div>
@@ -30,7 +34,7 @@
             </div>
 
         </label>
-
+        
     </div>
 
     <div class="weui_cells weui_cells_form">
