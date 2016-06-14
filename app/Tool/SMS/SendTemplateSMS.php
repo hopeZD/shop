@@ -4,6 +4,8 @@ namespace App\Tool\SMS;
 
 use App\Tool\SMS\CCPRestSmsSDK;
 
+include_once("./CCPRestSmsSDK.php");
+
 class SendTemplateSMS {
 
    //主账号
