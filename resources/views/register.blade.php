@@ -129,9 +129,9 @@
 @section('my-js')
     <script type="text/javascript">
 
-//        $('.bk_validate_code').click(function () {
-//            $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
-//        });
+        $('.bk_validate_code').click(function () {
+            $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
+        });
 
         $('#x12').next().hide();
         
