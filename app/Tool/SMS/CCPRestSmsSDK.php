@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Tool\SMS\CCPRestSmsSDK;
-
 class REST {
     private $AccountSid;
     private $AccountToken;
