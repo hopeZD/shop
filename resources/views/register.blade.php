@@ -7,8 +7,8 @@
 @section('content')
     <div class="weui_cells_title">注册方式</div>
     <div class="weui_cells weui_cells_radio">
-        <label for="X11" class="weui_cell weui_check_label">
-            <div class="weui_cell_hd weui_cell_primary">
+        <label  class="weui_cell weui_check_label" for="X11" >
+            <div class="weui_cell_bd weui_cell_primary">
                 <p>手机注册</p>
             </div>
             <div class="weui_cell_ft">
@@ -17,8 +17,8 @@
             </div>
         </label>
 
-        <label for="X12" class="weui_cell weui_check_label">
-            <div class="weui_cell_hd weui_cell_primary">
+        <label  class="weui_cell weui_check_label" for="X12" >
+            <div class="weui_cell_bd weui_cell_primary">
                 <p>邮箱注册</p>
             </div>
             <div class="weui_cell_ft">
@@ -121,23 +121,25 @@
 @section('my-js')
     <script type="text/javascript">
 
-        $('.bk_validate_code').click(function () {
-            $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
-        });
+//        $('.bk_validate_code').click(function () {
+//            $(this).attr('src', '/service/validate_code/create?random=' + Math.random());
+//        });
 
         $('#x12').next().hide();
-
-        $('input:radio[name=register_type]').click(function (event) {
-           $('input:radio[name=regist_type]').attr('checked', false);
+        
+        $('input:radio[name=register_type]').click(function(event) {
+           $('input:radio[name=register_type]').attr('checked', false);
            $(this).attr('checked', true);
            if($(this).attr('id') == 'x11') {
                $('#x11').next().show();
                $('#x12').next().hide();
-           } else if ($(this).attr('id') == 'x12') {
+           } else if($(this).attr('id' == 'x12')) {
                $('#x12').next().show();
-               $('#x11').next().show();
+               $('#x11').next().hide();
            }
         });
+
+
 
 
 
