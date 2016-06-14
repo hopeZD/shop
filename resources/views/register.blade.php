@@ -134,9 +134,13 @@
             if($(this).attr('id') == 'x11') {
                 $('#x11').next().show();
                 $('#x12').next().hide();
+                $('weui_cells_form').eq(0).show();
+                $('weui_cells_form').eq(1).hide();
             } else if($(this).attr('id') == 'x12') {
                 $('#x12').next().show();
                 $('#x11').next().hide();
+                $('weui_cells_form').eq(0).hide();
+                $('weui_cells_form').eq(1).show();
             }
 
         });
