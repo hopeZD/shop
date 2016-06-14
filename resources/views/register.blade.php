@@ -11,6 +11,7 @@
             <div class="weui_cell_bd weui_cell_primary">
                 <p>手机注册</p>
             </div>
+
             <div class="weui_cell_ft">
                 <input type="radio" class="weui_check" name="register_type" id="x11" checked="checked"/>
                 <span class="weui_icon_checked"></span>
@@ -21,10 +22,12 @@
             <div class="weui_cell_bd weui_cell_primary">
                 <p>邮箱注册</p>
             </div>
+
             <div class="weui_cell_ft">
                 <input type="radio" class="weui_check" name="register_type" id="x12" />
                 <span class="weui_icon_checked"></span>
             </div>
+
         </label>
 
     </div>
@@ -128,23 +131,8 @@
         $('#x12').next().hide();
         
         $('input:radio[name=register_type]').click(function(event) {
-           $('input:radio[name=register_type]').attr('checked', false);
-           $(this).attr('checked', true);
-           if($(this).attr('id') == 'x11') {
-               $('#x11').next().show();
-               $('#x12').next().hide();
-           } else if($(this).attr('id' == 'x12')) {
-               $('#x12').next().show();
-               $('#x11').next().hide();
-           }
+            alert('test');
         });
-
-
-
-
-
-
-
 
     </script>
 @endsection
