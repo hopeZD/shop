@@ -39,19 +39,16 @@ class ValidateController extends Controller
             $code .= $charset[mt_rand(0, $_len)];
         }
 
-        $sendTemplateSMS->sendTemplateSMS($phone, array($code, 30), 1);
-
-        $tempPhone = new TempPhone();
-        $tempPhone->phone = $phone;
-        $tempPhone->code = $code;
-        $tempPhone->deadline = date('Y-m-d H-i-s') + time() + 60 * 60;
-        $tempPhone->save();
-
-
-        $m3_result->status = 0;
-        $m3_result->message = '发送成功!';
+        $m3_result = $sendTemplateSMS->sendTemplateSMS($phone, array($code, 30), 1);
+        if($m3_result->status == 0) {
+            $tempPhone = new TempPhone();
+            $tempPhone->phone = $phone;
+            $tempPhone->code = $code;
+            $tempPhone->deadline = date('Y-m-d H-i-s') + time() + 60 * 60;
+            $tempPhone->save();
+        }
+        
         return $m3_result->toJson();
 
-        return '欢迎来到阳光居家!';
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Tool\SMS;
 
 use App\Tool\SMS\CCPRestSmsSDK;
+use App\Models\M3Result;
 
 
 class SendTemplateSMS
@@ -16,25 +17,32 @@ class SendTemplateSMS
 
     public static function   sendTemplateSMS($to, $datas, $tempId)
     {
+        $m3_result = new M3Result();
+
         $rest = new CCPRestSmsSDK(SendTemplateSMS::$serverIP, SendTemplateSMS::$serverPort, SendTemplateSMS::$softVersion);
         $rest->setAccount(SendTemplateSMS::$accountSid,SendTemplateSMS::$accountToken);
         $rest->setAppId(SendTemplateSMS::$appId);
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
         if ($result == NULL) {
-//               echo "result error!";
-            return false;
+            $m3_result->status = 2;
+            $m3_result->message = 'result error';
         }
         if ($result->statusCode != 0) {
-            return false;
-//               echo "error code :" . $result->statusCode . "<br>";
-//               echo "error msg :" . $result->statusMsg . "<br>";
+            $m3_result->status = $result->statusCode;
+            $m3_result->message = $result->statusMsg;
+            //echo "error code :" . $result->statusCode . "<br>";
+            //echo "error msg :" . $result->statusMsg . "<br>";
         } else {
-//               echo "Sendind TemplateSMS success!<br/>";
-            // 获取返回信息
-//               $smsmessage = $result->TemplateSMS;
-//               echo "dateCreated:" . $smsmessage->dateCreated . "<br/>";
-//               echo "smsMessageSid:" . $smsmessage->smsMessageSid . "<br/>";
-            return true;
+            $m3_result->status = 0;
+            $m3_result->message = '发送成功!';
+            //echo "Sendind TemplateSMS success!<br/>";
+            //获取返回信息
+            //$smsmessage = $result->TemplateSMS;
+            //echo "dateCreated:" . $smsmessage->dateCreated . "<br/>";
+            //echo "smsMessageSid:" . $smsmessage->smsMessageSid . "<br/>";
+            //return true;
         }
+
+        return $m3_result;
     }
 }
