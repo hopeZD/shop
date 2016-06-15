@@ -183,7 +183,7 @@
                     }
                     if(data.status != 0) {
                         $('.bk_toptips').show();
-                        $('.bk_toptips span').html(data.message);
+                        $('.bk_toptips span').html('发送失败!');
                         setTimeout(function() {
                             $('.bk_toptips').hide();
                         }, 2000);
