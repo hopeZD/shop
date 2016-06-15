@@ -157,8 +157,8 @@
             var interval = window.setInterval(function() {
                 $('.bk_phone_code_send').html(--num + 's 重新发送');
                 if(num == 0) {
-                    $(this).removeClass('bk_summary');
-                    $(this).addClass('bk_important');
+                    $('.bk_phone_code_send').removeClass('bk_summary');
+                    $('.bk_phone_code_send').addClass('bk_important');
                     enable = true;
                     window.clearInterval(interval);
                     $('.bk_phone_code_send').html('重新发送');
