@@ -144,18 +144,20 @@
         var enable = true;
 
         $('.bk_phone_code_send').click(function(event) {
-            
+
             //发送验证码
             if(enable == false) {
                 true;
             }
-            enable == false;
+            $(this).removeClass('bk_important');
+            $(this).addClass('bk_summary');
 
-            var num = 60;
+            enable = false;
+            var num = 5;
             var interval = window.setInterval(function() {
                 $('.bk_phone_code_send').html(--num + 's 重新发送');
                 if(num == 0) {
-                    enable == true;
+                    enable = true;
                     window.clearInterval(interval);
                     $('.bk_phone_code_send').html('请重新发送');
                 }
