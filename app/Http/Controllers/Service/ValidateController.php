@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Service;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Request;
+use App\Http\Request;
 use App\Tool\Validate\ValidateCode;
 use App\Tool\SMS\SendTemplateSMS;
 use App\Entity\TempPhone;
