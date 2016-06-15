@@ -194,7 +194,7 @@
                     $('.bk_toptips').show();
                     $('.bk_toptips span').html('发送成功!');
                     setTimeout(function() {
-                        $('.m3_toptips').hide();
+                        $('.bk_toptips').hide();
                     }, 2000);
 
                 },
