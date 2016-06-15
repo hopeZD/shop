@@ -18,6 +18,15 @@
         <div></div>
     </div>
 
+    <!--tooltips-->
+
+    <div class="bk_toptips"><span></span></div>
+    <div id="global_menu" onclick="onMenuClick();">
+        <div></div>
+    </div>
+
+    <!--end tooltips-->
+
     <!--BEGIN actionSheet-->
     <div id="actionSheet_wrap">
         <div class="weui_mask_transition" id="mask"></div>

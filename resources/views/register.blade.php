@@ -42,7 +42,7 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input type="tel" placeholder="" class="weui_input">
+                <input type="tel" placeholder="" class="weui_input" name="phone">
             </div>
         </div>
 
@@ -153,7 +153,7 @@
             $(this).addClass('bk_summary');
 
             enable = false;
-            var num = 5;
+            var num = 60;
             var interval = window.setInterval(function() {
                 $('.bk_phone_code_send').html(--num + 's 重新发送');
                 if(num == 0) {
@@ -166,6 +166,44 @@
 
 
             }, 1000);
+
+            var phone = $('input[name=phone]').val();
+            $.ajax({
+                url: 'service/validate_phone/send',
+                dataType: 'json',
+                cache: false,
+                data: {phone: phone},
+                success: function(data) {
+                    if(data == null) {
+                        $('.bk_toptips').show();
+                        $('.bk_toptips span').html('服务端错误!');
+                        setTimeout(function() {
+                            $('.m3_toptips').hide();
+                        }, 2000);
+                    }
+                    if(data.status != 0) {
+                        $('.bk_toptips').show();
+                        $('.bk_toptips span').html(data.message);
+                        setTimeout(function() {
+                            $('.m3_toptips').hide();
+                        }, 2000);
+                        return;
+                    }
+
+                    $('.bk_toptips').show();
+                    $('.bk_toptips span').html('发送成功!');
+                    setTimeout(function() {
+                        $('.m3_toptips').hide();
+                    }, 2000);
+
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                }
+
+            });
 
         });
 
