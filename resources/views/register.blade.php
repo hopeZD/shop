@@ -153,7 +153,7 @@
             $(this).addClass('bk_summary');
 
             enable = false;
-            var num = 60;
+            var num = 5;
             var interval = window.setInterval(function() {
                 $('.bk_phone_code_send').html(--num + 's 重新发送');
                 if(num == 0) {
