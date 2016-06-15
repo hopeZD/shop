@@ -178,14 +178,14 @@
                         $('.bk_toptips').show();
                         $('.bk_toptips span').html('服务端错误!');
                         setTimeout(function() {
-                            $('.m3_toptips').hide();
+                            $('.bk_toptips').hide();
                         }, 2000);
                     }
                     if(data.status != 0) {
                         $('.bk_toptips').show();
                         $('.bk_toptips span').html(data.message);
                         setTimeout(function() {
-                            $('.m3_toptips').hide();
+                            $('.bk_toptips').hide();
                         }, 2000);
                         return;
                     }
