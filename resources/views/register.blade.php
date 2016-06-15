@@ -169,7 +169,7 @@
 
             var phone = $('input[name=phone]').val();
             $.ajax({
-                url: 'service/validate_phone/send',
+                url: '/service/validate_phone/send',
                 dataType: 'json',
                 cache: false,
                 data: {phone: phone},
