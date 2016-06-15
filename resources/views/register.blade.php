@@ -141,8 +141,27 @@
             }
         });
 
-        $('.bk_validate_code').click(function(event) {
+        var enable = true;
+
+        $('.bk_phone_code_send').click(function(event) {
+            
             //发送验证码
+            if(enable == false) {
+                true;
+            }
+            enable == false;
+
+            var num = 60;
+            var interval = window.setInterval(function() {
+                $('.bk_phone_code_send').html(--num + 's 重新发送');
+                if(num == 0) {
+                    enable == true;
+                    window.clearInterval(interval);
+                    $('.bk_phone_code_send').html('请重新发送');
+                }
+
+
+            }, 1000);
 
         });
 
