@@ -169,7 +169,7 @@
 
             var phone = $('input[name=phone]').val();
             $.ajax({
-                url: 'service/validate_phone/send',
+                url: '/service/validate_phone/send',
                 dataType: 'json',
                 cache: false,
                 data: {phone: phone},
@@ -181,9 +181,10 @@
                             $('.bk_toptips').hide();
                         }, 2000);
                     }
+
                     if(data.status != 0) {
                         $('.bk_toptips').show();
-                        $('.bk_toptips span').html('发送失败!');
+                        $('.bk_toptips span').html(data.message);
                         setTimeout(function() {
                             $('.bk_toptips').hide();
                         }, 2000);
