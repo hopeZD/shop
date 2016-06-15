@@ -67,9 +67,11 @@
       <file leaf-file-name="ValidateController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ValidateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="342">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <folding>
+                <element signature="e#48#84#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -564,12 +566,12 @@
       <workItem from="1465783272571" duration="9542000" />
       <workItem from="1465869583281" duration="4367000" />
       <workItem from="1465899321769" duration="11890000" />
-      <workItem from="1465958139279" duration="2208000" />
+      <workItem from="1465958139279" duration="2338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49748000" />
+    <option name="totallyTimeSpent" value="49878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="76" y="23" width="1203" height="704" extended-state="0" />
@@ -988,9 +990,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/ValidateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding>
+            <element signature="e#48#84#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Service;
 
 use App\Http\Controllers\Controller;
-use App\Http\Request;
+
 use App\Tool\Validate\ValidateCode;
 use App\Tool\SMS\SendTemplateSMS;
 use App\Entity\TempPhone;
 use App\Models\M3Result;
+use Illuminate\Http\Request;
 
 
 class ValidateController extends Controller
