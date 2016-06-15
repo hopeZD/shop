@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Request;
 use App\Tool\SMS\SendTemplateSMS;
+use App\Entity\TempPhone;
+use App\Models\M3Result;
 
 
 
@@ -18,7 +20,17 @@ class ValidateController extends Controller
         return $validateCode->doimg();
     }
 
-    public function sendSMS($value= '') {
+    public function sendSMS(Request $request) {
+
+        $m3_result = new M3Result();
+
+        $phone = $request->input('phone', '');
+
+        if($phone == '') {
+            $m3_result->status = 1;
+            $m3_result->message = '手机号不能为空';
+            return $m3_result->toJson();
+        }
 
         $sendTemplateSMS = new SendTemplateSMS();
 
@@ -29,7 +41,19 @@ class ValidateController extends Controller
             $code .= $charset[mt_rand(0, $_len)];
         }
 
-        $sendTemplateSMS->sendTemplateSMS("18810256225", array($code, 30), 1);
+        $sendTemplateSMS->sendTemplateSMS($phone, array($code, 30), 1);
+
+        $tempPhone = new TempPhone();
+        $tempPhone->phone = $phone;
+        $tempPhone->code = $code;
+        $tempPhone->deadline = date('Y-m-d H-i-s') + time() + 60 * 60;
+        $tempPhone->save();
+
+
+        $m3_result->status = 0;
+        $m3_result->message = '发送成功!';
+        return $m3_result->toJson();
+
         return '欢迎来到阳光居家!';
     }
 }

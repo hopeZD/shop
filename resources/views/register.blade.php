@@ -142,6 +142,7 @@
         });
 
         $('.bk_validate_code').click(function(event) {
+            //发送验证码
 
         });
 
