@@ -206,7 +206,7 @@
 
                     if(data.status != 0) {
                         $('.bk_toptips').show();
-                        $('.bk_toptips span').html();
+                        $('.bk_toptips span').html(data.message);
                         setTimeout(function() {
                             $('.bk_toptips').hide();
                         }, 2000);
