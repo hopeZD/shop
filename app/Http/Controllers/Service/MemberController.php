@@ -63,7 +63,7 @@ class MemberController extends Controller
                     return $m3_result->toJson();
                 }
 
-                $member = new Member();
+                $member = new Member;
                 $member->phone = $phone;
                 $member->password = md5('bk' + $password);
                 $member->save();

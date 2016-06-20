@@ -65,8 +65,8 @@
       <file leaf-file-name="MemberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/MemberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+            <state relative-caret-position="310">
+              <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
               <folding>
                 <element signature="e#48#78#0#PHP" expanded="true" />
               </folding>
@@ -171,7 +171,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="32" />
+    <option name="x" value="13" />
     <option name="y" value="23" />
     <option name="width" value="1419" />
     <option name="height" value="704" />
@@ -527,15 +527,15 @@
       <workItem from="1465899321769" duration="11890000" />
       <workItem from="1465958139279" duration="8340000" />
       <workItem from="1466257511745" duration="1807000" />
-      <workItem from="1466375941031" duration="8602000" />
+      <workItem from="1466375941031" duration="8787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66289000" />
+    <option name="totallyTimeSpent" value="66474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="23" width="1419" height="704" extended-state="0" />
+    <frame x="13" y="23" width="1419" height="704" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -940,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Service/MemberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        <state relative-caret-position="310">
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
           <folding>
             <element signature="e#48#78#0#PHP" expanded="true" />
           </folding>
