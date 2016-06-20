@@ -6,7 +6,8 @@ use App\Http\Controllers\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\M3Result;
-
+use App\Entity\Member;
+use App\Entity\TempPhone;
 
 
 class MemberController extends Controller
@@ -51,6 +52,24 @@ class MemberController extends Controller
             if ($phone_code == '' || strlen($phone_code) != 6) {
                 $m3_result->status = 5;
                 $m3_result->message = '手机验证码为6位';
+                return $m3_result->toJson();
+            }
+
+            $tempPhone = TempPhone::where('phone', $phone)->first();
+            if($tempPhone->code == $phone_code) {
+                if(time > strtotime($tempPhone->deadline)) {
+                    $m3_result->status = 7;
+                    $m3_result->message = '手机验证码不正确';
+                    return $m3_result->toJson();
+                }
+
+                $member = new Member();
+                $member->phone = $phone;
+                $member->password = md5('hope' + $password);
+                $member->save();
+
+                $m3_result->status = 0;
+                $m3_result->message = '注册成功';
                 return $m3_result->toJson();
             }
 
