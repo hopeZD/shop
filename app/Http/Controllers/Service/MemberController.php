@@ -22,7 +22,7 @@ class MemberController extends Controller
 
         $m3_result = new M3Result();
 
-        if ($email == '' && phone == '') {
+        if ($email == '' && $phone == '') {
             $m3_result->status = 1;
             $m3_result->message = '手机号或邮箱不能为空';
             return $m3_result->toJson();
