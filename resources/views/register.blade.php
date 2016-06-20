@@ -49,14 +49,14 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input type="password" name='passwd_phone' placeholder="不少于6位数" class="weui_input">
+                <input type="password" name='password_phone' placeholder="不少于6位数" class="weui_input">
             </div>
         </div>
 
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
             <div class="weui_cell_bd weui_primary">
-                <input type="password" name='passwd_phone_cfm' class="weui_input"  placeholder="不少于6位数" />
+                <input type="password" name='password_phone_cfm' class="weui_input"  placeholder="不少于6位数" />
             </div>
         </div>
 
@@ -84,14 +84,14 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input type="password" name='passwd_email' placeholder="不少于6位数" class="weui_input">
+                <input type="password" name='password_email' placeholder="不少于6位数" class="weui_input">
             </div>
         </div>
 
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
             <div class="weui_cell_bd weui_primary">
-                <input type="password" name='passwd_email_cfm' class="weui_input" placeholder="不少于6位数" />
+                <input type="password" name='password_email_cfm' class="weui_input" placeholder="不少于6位数" />
             </div>
         </div>
 
