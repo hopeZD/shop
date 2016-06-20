@@ -25,7 +25,7 @@ class SendTemplateSMS
         $result = $rest->sendTemplateSMS($to, $datas, $tempId);
         if ($result == NULL) {
             $m3_result->status = 3;
-            $m3_result->message = 'error';
+            $m3_result->message = 'result error';
         }
         if ($result->statusCode != 0) {
             $m3_result->status = $result->statusCode;

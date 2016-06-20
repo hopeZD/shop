@@ -49,14 +49,14 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input type="text" placeholder="不少于6位数" class="weui_input">
+                <input type="password" name='passwd_phone' placeholder="不少于6位数" class="weui_input">
             </div>
         </div>
 
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
             <div class="weui_cell_bd weui_primary">
-                <input type="text" class="weui_input" placeholder="不少于6位数" />
+                <input type="password" name='passwd_phone_cfm' class="weui_input"  placeholder="不少于6位数" />
             </div>
         </div>
 
@@ -84,14 +84,14 @@
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">密码</label></div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input type="text" placeholder="不少于6位数" class="weui_input">
+                <input type="password" name='passwd_email' placeholder="不少于6位数" class="weui_input">
             </div>
         </div>
 
         <div class="weui_cell">
             <div class="weui_cell_hd"><label class="weui_label">确认密码</label></div>
             <div class="weui_cell_bd weui_primary">
-                <input type="text" class="weui_input" placeholder="不少于6位数" />
+                <input type="password" name='passwd_email_cfm' class="weui_input" placeholder="不少于6位数" />
             </div>
         </div>
 
@@ -141,6 +141,9 @@
             }
         });
 
+    </script>
+
+    <script type="text/javascript">
         var enable = true;
 
         $('.bk_phone_code_send').click(function(event) {
@@ -149,11 +152,30 @@
             if(enable == false) {
                 true;
             }
+
+            //手机号不能为空
+            var phone = $('input[name=phone]').val();
+            if(phone == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('请输入手机号');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return;
+            }
+
+            //手机号格式
+            if(phone.length != 11 || phone[0] != '1'){
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('手机格式不正确');
+                setTimeout(function(){$('.bk_toptips').hide();}, 2000);
+                return;
+            }
+
+
             $(this).removeClass('bk_important');
             $(this).addClass('bk_summary');
 
             enable = false;
-            var num = 5;
+            var num = 30;
             var interval = window.setInterval(function() {
                 $('.bk_phone_code_send').html(--num + 's 重新发送');
                 if(num == 0) {
@@ -164,16 +186,16 @@
                     $('.bk_phone_code_send').html('重新发送');
                 }
 
-
             }, 1000);
 
-            var phone = $('input[name=phone]').val();
+
             $.ajax({
                 url: '/service/validate_phone/send',
                 dataType: 'json',
                 cache: false,
                 data: {phone: phone},
                 success: function(data) {
+
                     if(data == null) {
                         $('.bk_toptips').show();
                         $('.bk_toptips span').html('服务端错误!');
@@ -184,18 +206,20 @@
 
                     if(data.status != 0) {
                         $('.bk_toptips').show();
-                        $('.bk_toptips span').html('发送失败!');
+                        $('.bk_toptips span').html();
                         setTimeout(function() {
                             $('.bk_toptips').hide();
                         }, 2000);
                         return;
                     }
 
+
                     $('.bk_toptips').show();
                     $('.bk_toptips span').html('发送成功!');
                     setTimeout(function() {
-                        $('.m3_toptips').hide();
+                        $('.bk_toptips').hide();
                     }, 2000);
+
 
                 },
                 error: function(xhr, status, error) {
@@ -205,8 +229,182 @@
                 }
 
             });
-
         });
 
+    </script>
+
+    <script type="text/javascript">
+        function onRegisterClick() {
+            $('input:radio[name=register_type]').each(function(index, el) {
+                if($(this).attr('checked') == 'checked') {
+                    var email = '';
+                    var phone = '';
+                    var password = '';
+                    var confirm = '';
+                    var phone_code = '';
+                    var validate_code = '';
+
+                    var id = $(this).attr('id');
+                    if(id == 'x11') {
+                        phone = $('input[name=phone]').val();
+                        password = $('input[name=password_phone]').val();
+                        confirm = $('input[name=password_phone_cfm]').val();
+                        phone_code = $('input[name=phone_code]').val();
+                        if(verifyPhone(phone, password, confirm, phone_code) == false) {
+                            return;
+                        }
+
+                    } else if(id == 'x12') {
+                        email = $('input[name=email]').val();
+                        password = $('input[name=password_email]').val;
+                        confirm = $('input[name=password_email_cfm]').val;
+                        validate_code = $('input[name=validate_code]').val;
+                        if(verifyEmail(email, password, confirm, validate_code) == false) {
+                            return;
+                        }
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/service/register',
+                        dataType: 'json',
+                        cache: false,
+                        data: {phone: phone, email: email, password: password, confirm: confirm,
+                               phone_code: phone_code, validate_code: validate_code, _token: "{{csrf_token()}}"},
+
+                        success: function(data) {
+                            if(data == null) {
+                                $('.bk_toptips').show();
+                                $('.bk_toptips span').html('服务器端错误');
+                                setTimeout(function(){$('.bk_toptips').hide();}, 2000);
+                                return;
+                            }
+                            $('.bk_toptips').show();
+                            $('.bk_toptips span').html('注册成功');
+                            setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+
+                        },
+
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            console.log(status);
+                            console.log(error);
+                        }
+                    });
+                }
+            });
+        }
+
+        function verifyPhone(phone, password, confirm, phone_code) {
+
+            //手机号不能为空
+            if(phone == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('请输入手机号');
+                setTimeout(function() {$('.bk_toptips').hide()}, 2000);
+                return false;
+            }
+
+            //手机号格式
+            if(phone.length !== 11 || phone[0] != '1') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('手机格式不正确');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password == '' || confirm == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('密码不能为空');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password.length < 6 || confirm.length < 6) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('密码不能少于6位');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password != confirm) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('两次密码不相同');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(phone_code == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('手机验证码不能为空');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(phone_code.length != 6) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('手机验证码为6位');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            return true;
+        }
+
+        //邮箱格式验证
+        function verifyEmail(email, password, confirm, validate_code) {
+            //邮箱不为空
+            if(email == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('邮箱不能为空');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            //邮箱格式
+            if(email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('邮箱格式不正确');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password == '' || confirm == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('密码不能为空');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password.length < 6 || confirm.length < 6) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('密码不能少于6位');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(password != confirm) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('两次密码不相同');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(validate_code == '') {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('验证码不能为空');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            if(validate_code.length != 4) {
+                $('.bk_toptips').show();
+                $('.bk_toptips span').html('验证码为4位');
+                setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+                return false;
+            }
+
+            return true;
+        }
     </script>
 @endsection

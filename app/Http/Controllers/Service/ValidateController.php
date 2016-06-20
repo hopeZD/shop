@@ -30,8 +30,13 @@ class ValidateController extends Controller
             return $m3_result->toJson();
         }
 
-        $sendTemplateSMS = new SendTemplateSMS();
+        if(strlen($phone) != 11 || $phone[0] != '1') {
+            $m3_result->status = 2;
+            $m3_result->message = '手机格式不正确';
+            return $m3_result->toJson();
+        }
 
+        $sendTemplateSMS = new SendTemplateSMS();
         $code = '';
         $charset = '1234567890';
         $_len = strlen($charset) -1;
@@ -49,6 +54,7 @@ class ValidateController extends Controller
         }
         
         return $m3_result->toJson();
-
     }
+
+    
 }
