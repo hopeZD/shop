@@ -71,6 +71,10 @@ class MemberController extends Controller
                 $m3_result->status = 0;
                 $m3_result->message = '注册成功';
                 return $m3_result->toJson();
+            } else {
+                $m3_result->status = 7;
+                $m3_result->message = '手机验证码不正确';
+                return $m3_result->toJson();
             }
 
         } else {
